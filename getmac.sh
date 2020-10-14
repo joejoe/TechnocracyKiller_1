@@ -39,11 +39,11 @@ sudo ip -s -s neigh flush all
 fping -s -g 192.168.0.15 192.168.0.100 -r 1 # This is my DHCP assigned range I'm assigning. No need to ping the entire subnet. I'm running this to fill up the arp table which we will then consult.
 
 # My first device I don't want plugged in. Get the MAC by pinging it once from your machine and then typing arp -a. Or check your router (NAT Box) arp tables. Or reboot your nat box and just plug this EvilAmaShitzon device in so you can see its MAC.
-EvilAmaShitzon_echo8="33:33:33:33:33:69"
+EvilAmaShitzon_device="33:33:33:33:33:69"
  
 default_text_on="DEVICE ON"
 
-result=$(check_if_on $EvilAmaShitzon_echo8)
-if [ "$result" = "1" ]; then echo $default_text_on && play_audio_file echo8.mp3 $audio_files_dir; fi &&unset result
+result=$(check_if_on $EvilAmaShitzon_device)
+if [ "$result" = "1" ]; then echo $default_text_on && play_audio_file device.mp3 $audio_files_dir; fi &&unset result
 
  
