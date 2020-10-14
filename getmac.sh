@@ -2,6 +2,7 @@
 # This script will allow you to check (via MAC Address) all-night-long (if you run it as such via crontab) whether or not you have a particular "internet of garbage" device online.
 # Notification: It will play a sound. Want an email instead? Just program that in there in place of where I'm playing an audio file.
 # Why: Say you have a crazy girlfriend who turns these devices on when you're not paying attention. AND say you're concerned about "capitulation signals" being sent out like little human slave dog whistles by EvilAmaShitzon and other overlords at 3AM. You can run this script and it will tell you if the device had been turned back ON against your will, so you can get up and turn it off. Not to mention the spying.
+# crontab: * * * * * every minute if you want! Or */10 * * * * every 10 minutes or whatever.
 
 check_if_on()
 {
