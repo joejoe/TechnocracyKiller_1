@@ -44,6 +44,9 @@ EvilAmaShitzon_device="33:33:33:33:33:69"
 default_text_on="DEVICE ON"
 
 result=$(check_if_on $EvilAmaShitzon_device)
-if [ "$result" = "1" ]; then echo $default_text_on && play_audio_file device.mp3 $audio_files_dir; fi &&unset result
+if [ "$result" = "1" ]; then echo $default_text_on && play_audio_file device.mp3 $audio_files_dir && result_somethingset=1; fi && unset result
 
- 
+
+if [ "$result_somethingset" = "1" ]; then echo "Local time is `date +%k` hours `date +%M` minutes" | festival --tts; fi
+
+
